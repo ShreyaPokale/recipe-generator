@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasty</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@300;400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/dish.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="background-blur"></div>
+    <header>
+        <nav>
+            <div class="logo">Tasty</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#index.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1 class="">Discover Delicious Dishes</h1>
+        <p class="lead">Your ingredients, our suggestions. Find recipes effortlessly!</p>
+        <div class="text-center mb-4">
+            <h2>Select Ingredients</h2>
+            <p>Click on ingredients or add your own!</p>
+        </div>
+
+        <div class="ingredient-buttons text-center">
+            <button class="btn btn-outline-primary ingredient-btn" data-ingredient="egg">Egg</button>
+            <button class="btn btn-outline-primary ingredient-btn" data-ingredient="cheese">Cheese</button>
+            <button class="btn btn-outline-primary ingredient-btn" data-ingredient="tomato">Tomato</button>
+            <button class="btn btn-outline-primary ingredient-btn" data-ingredient="onion">Onion</button>
+            <button class="btn btn-outline-primary ingredient-btn" data-ingredient="lettuce">Lettuce</button>
+            <button class="btn btn-outline-primary ingredient-btn" data-ingredient="carrot">Carrot</button>
+            <button class="btn btn-outline-primary ingredient-btn" data-ingredient="pepperoni">Pepperoni</button>
+            <button class="btn btn-outline-primary ingredient-btn" data-ingredient="basil">Basil</button>
+        </div>
+
+        <div class="input-group">
+            <input type="text" id="ingredientInput" class="form-control" placeholder="Enter an ingredient">
+            <button class="btn btn-primary" id="addIngredient">+ Add Ingredient</button>
+        </div>
+
+        <div>
+            <h5 class="text-center">Your Ingredients:</h5>
+            <div id="ingredientList" class="d-flex justify-content-center flex-wrap mb-4"></div>
+        </div>
+
+        <div class="text-center">
+            <button class="btn btn-success" id="getSuggestions">Get Suggestions</button>
+        </div>
+
+        <!-- Dish Suggestions Section -->
+        <div class="suggestions mt-5">
+            <h3 class="text-center mb-4">Suggested Dishes</h3>
+            <div id="dishSuggestions" class="row"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 tasty | Designed with ❤️</p>
+    </footer>
+
+    </div>
+
+
+
+
+</body>
+<script>
+    const dishes = [
+        {
+            name: 'Pasta',
+            ingredients: ['tomato', 'cheese', 'basil'],
+            steps: ['Boil pasta in salted water.', 'Prepare sauce with tomato and basil.', 'Mix pasta with sauce and add cheese on top.'],
+            image: '/img/pasta.jpeg'
+        },
+        {
+            name: 'Salad',
+            ingredients: ['lettuce', 'tomato', 'cucumber'],
+            steps: ['Chop lettuce, tomato, and cucumber.', 'Mix in a bowl with dressing.', 'Serve fresh.'],
+            image: '/img/salad.webp'
+        },
+        {
+            name: 'Pizza',
+            ingredients: ['cheese', 'tomato', 'pepperoni'],
+            steps: ['Prepare pizza dough.', 'Add tomato sauce, cheese, and pepperoni.', 'Bake in the oven at 200°C for 15 minutes.'],
+            image: '/pizza.jpeg'
+        },
+        {
+            name: 'Grilled Cheese Sandwich',
+            ingredients: ['cheese', 'bread', 'butter'],
+            steps: ['Butter the bread slices.', 'Place cheese between slices.', 'Grill the sandwich until golden brown.'],
+            image: '/Grilled-Sandwich.webp'
+        },
+        {
+            name: 'Chicken Caesar Salad',
+            ingredients: ['chicken', 'lettuce', 'croutons', 'parmesan cheese', 'caesar dressing'],
+            steps: ['Grill or bake the chicken and slice it.', 'Toss lettuce with croutons, parmesan, and caesar dressing.', 'Top with chicken slices and serve.'],
+            image: '/Chicken-Caesar-Salad.jpeg'
+        },
+        {
+            name: 'Beef Tacos',
+            ingredients: ['ground beef', 'taco shells', 'cheese', 'lettuce', 'tomato', 'sour cream'],
+            steps: ['Cook ground beef with taco seasoning.', 'Fill taco shells with beef and toppings.', 'Serve with cheese, lettuce, tomato, and sour cream.'],
+            image: '/Beef-Tacos.jpeg'
+        },
+        {
+            name: 'Chicken Curry',
+            ingredients: ['chicken', 'curry powder', 'onion', 'tomato', 'cream'],
+            steps: ['Cook chicken pieces in a pan.', 'Add onion and cook until soft.', 'Stir in curry powder, tomatoes, and cream.', 'Simmer and serve with rice.'],
+            image: '/Chicken-Curry.jpeg'
+        },
+        {
+            name: 'Vegetable Stir-fry',
+            ingredients: ['broccoli', 'carrot', 'bell pepper', 'soy sauce', 'garlic'],
+            steps: ['Chop vegetables and stir-fry with garlic.', 'Add soy sauce and cook until vegetables are tender.', 'Serve with rice or noodles.'],
+            image: '/Vegetable-Stir-fry.webp'
+        },
+        {
+            name: 'Burgers',
+            ingredients: ['beef patty', 'burger bun', 'cheese', 'lettuce', 'tomato', 'pickles'],
+            steps: ['Grill or fry the beef patty.', 'Assemble the burger with bun, patty, cheese, and toppings.', 'Serve with fries or salad.'],
+            image: '/Burgers.webp'
+        },
+        {
+            name: 'Fried Rice',
+            ingredients: ['rice', 'egg', 'carrot', 'green peas', 'soy sauce'],
+            steps: ['Cook rice and set aside.', 'Scramble eggs in a pan and add cooked rice.', 'Add vegetables and soy sauce.', 'Stir-fry and serve.'],
+            image: '/Fried-Rice.jpeg'
+        },
+        {
+            name: 'Sushi',
+            ingredients: ['sushi rice', 'nori sheets', 'salmon', 'avocado', 'soy sauce'],
+            steps: ['Cook sushi rice and let it cool.', 'Place a nori sheet on a mat, spread rice, and add toppings.', 'Roll the sushi and slice into pieces.', 'Serve with soy sauce.'],
+            image: '/Sushi.jpeg'
+        },
+        {
+            name: 'Falafel',
+            ingredients: ['chickpeas', 'garlic', 'parsley', 'cumin', 'coriander', 'flour'],
+            steps: ['Blend chickpeas with garlic, herbs, and spices.', 'Form into balls and fry until golden brown.', 'Serve with pita and tahini sauce.'],
+            image: '/Falafel.webp'
+        },
+        {
+            name: 'Spaghetti Bolognese',
+            ingredients: ['spaghetti', 'ground beef', 'tomato sauce', 'garlic', 'onion', 'parmesan cheese'],
+            steps: ['Cook spaghetti according to package instructions.', 'Brown ground beef with garlic and onion.', 'Add tomato sauce and simmer.', 'Serve with pasta and parmesan.'],
+            image: '/Spaghetti Bolognese.jpeg'
+        },
+        {
+            name: 'Lentil Soup',
+            ingredients: ['lentils', 'carrot', 'onion', 'celery', 'tomato'],
+            steps: ['Sauté onion, carrot, and celery.', 'Add lentils and broth, and simmer until soft.', 'Serve with bread or crackers.'],
+            image: '/Lentil Soup.jpeg'
+        }
+    ];
+
+    const userIngredients = [];
+    const ingredientList = document.getElementById('ingredientList');
+    const dishSuggestions = document.getElementById('dishSuggestions');
+
+    document.querySelectorAll('.ingredient-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const ingredient = button.dataset.ingredient;
+            if (ingredient && !userIngredients.includes(ingredient)) {
+                addIngredient(ingredient);
+            }
+        });
+    });
+
+    document.getElementById('addIngredient').addEventListener('click', () => {
+        const ingredient = document.getElementById('ingredientInput').value.trim().toLowerCase();
+        if (ingredient && !userIngredients.includes(ingredient)) {
+            addIngredient(ingredient);
+            document.getElementById('ingredientInput').value = '';
+        }
+    });
+
+    document.getElementById('getSuggestions').addEventListener('click', () => {
+        dishSuggestions.innerHTML = '';
+        const exactMatches = dishes.filter(dish =>
+            dish.ingredients.every(ing => userIngredients.includes(ing)) // Exact match for all ingredients
+        );
+
+        const partialMatches = dishes.filter(dish =>
+            dish.ingredients.some(ing => userIngredients.includes(ing)) // Partial match for any ingredient
+        );
+
+        const allMatches = [...exactMatches, ...partialMatches];
+
+        if (allMatches.length) {
+            allMatches.forEach(dish => {
+                const card = `
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="${dish.image}" class="card-img-top" alt="${dish.name}">
+                            <div class="card-body">
+                                <h5 class="card-title">${dish.name}</h5>
+                                <p class="card-text">Ingredients: ${dish.ingredients.join(', ')}</p>
+                                <h6>Steps:</h6>
+                                <ol>${dish.steps.map(step => `<li>${step}</li>`).join('')}</ol>
+                            </div>
+                        </div>
+                    </div>`;
+                dishSuggestions.innerHTML += card;
+            });
+        } else {
+            dishSuggestions.innerHTML = '<p class="text-center text-danger">No dishes found!</p>';
+        }
+    });
+
+    function addIngredient(ingredient) {
+        userIngredients.push(ingredient);
+        const btn = document.createElement('button');
+        btn.className = 'btn btn-secondary btn-sm mx-1 my-1';
+        btn.textContent = `${ingredient} ✖`;
+        btn.addEventListener('click', () => {
+            userIngredients.splice(userIngredients.indexOf(ingredient), 1);
+            btn.remove();
+        });
+        ingredientList.appendChild(btn);
+    }
+</script>
+
+</html>
