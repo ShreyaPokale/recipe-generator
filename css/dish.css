@@ -70,17 +70,17 @@ nav {
 }
 
 /* Main Content */
-.container {
+.header-container {
     padding: 100px 20px 50px;
     max-width: 1200px;
     margin: auto;
     text-align: center;
 }
 
-.container h1 {
+.header-container h1 {
     color: #fff;
     text-align: center;
-    padding: 30px;
+    padding: 10px;
     border-radius: 15px;
     animation: fadeInText 2s ease-in-out;
     font-size: 4rem;
@@ -110,11 +110,289 @@ nav {
         text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7), 0 0 25px #feb47b, 0 0 35px #ff7e5f;
     }
 }
-.container p.lead {
+.header-container p.lead {
     font-size: 1.5rem;
     color: #ddd;
-    margin: 20px auto;
+    margin: 10px auto;
     max-width: 800px;
-    line-height: 1.8;
+    line-height: 1;
+}
+.body-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 30px;
+    background: rgba(253, 252, 252, 0.4);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    margin-top: 20px;
+    animation: slideIn 1.5s ease-in-out;
 }
 
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.text-center h2 {
+    font-size: 2.rem;
+    font-weight: 600;
+    color: #f1c40f;
+    margin-bottom: 10px;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    color: #e2dcdc;
+    margin: 0;
+    text-transform: uppercase; 
+    letter-spacing: 2px;
+}
+
+.text-center p {
+    font-size: 1.2rem;
+    color: #0c0c0c;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.ingredient-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.ingredient-btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: 2px solid #f79729;
+    color: #f79729;
+    background: transparent;
+    border-radius: 30px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.ingredient-btn:hover {
+    background: #f79729;
+    color: #000;
+    transform: scale(1.05);
+}
+
+.input-group {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.input-group input {
+    width: 50%;
+    padding: 10px 15px;
+    border-radius: 30px 0 0 30px;
+    border: 1px solid #ddd;
+    background: #fff;
+    outline: none;
+    font-size: 1rem;
+}
+
+.input-group button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0 30px 30px 0;
+    background: #f79729;
+    color: #000;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.input-group button:hover {
+    background: #feb47b;
+}
+.text-center{
+text-align: center;
+margin: 20px;
+color: #0c0c0c;
+
+}
+#ingredientList {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#ingredientList .btn {
+    background: rgba(92, 206, 77, 0.8);
+    color: #000;
+    border: 1px solid #60be43;
+    transition: 0.3s;
+    padding: 5px 15px;
+    border-radius: 30px;
+}
+
+#ingredientList .btn:hover {
+    background: #72e063;
+    color: #000;
+    transform: scale(1.1);
+}
+.btn-success  {
+    padding: 15px 40px;
+    background: linear-gradient(45deg, #f0b357, #e7cd38); /* Gradient matching food theme */
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px; /* Round button edges */
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(255, 119, 63, 0.5); /* Soft shadow */
+    text-decoration: none; /* Remove underline for links */
+    display: inline-block;
+    text-align: center;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-success:hover{
+    background: linear-gradient(45deg, #feb47b, #ff7e5f); /* Reversed gradient on hover */
+    transform: scale(1.1); /* Slight scale-up on hover */
+    box-shadow: 0 6px 20px rgba(255, 119, 63, 0.7); /* Enhanced shadow on hover */
+}
+
+.suggestions h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    color: #e2dcdc;
+    margin: 0;
+    text-transform: uppercase; 
+    letter-spacing: 2px;
+}
+.suggestions .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; /* More space between cards */
+    margin: 0 auto;
+    max-width: 1200px; /* Limits the row width */
+    padding: 20px;
+}
+
+.suggestions .card {
+    background: rgba(255, 255, 255, 0.2); /* Slightly more opacity for a subtle effect */
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    overflow: hidden;
+    color: #fff;
+    position: relative;
+    transform: scale(1);
+    height: 60vh;
+    margin-bottom: 30px;
+}
+
+.suggestions .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+}
+
+/* .suggestions .card-img-top {
+    border-radius: 15px 15px 0 0;
+    max-height: 220px;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    filter: brightness(80%);
+    transition: filter 0.3s ease;
+} */
+.card-img{
+background-size: contain;
+background-repeat: no-repeat;
+background-position: center;
+  width: 100%;
+ height: 50%;
+background-color: rgb(192, 181, 181);
+   
+}
+.suggestions .card:hover img {
+    filter: brightness(100%); /* Brighten image on hover */
+}
+
+.suggestions .card-body {
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    position: relative;
+    height: 50%;
+}
+
+.suggestions .card-body h5 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #f1c40f; /* Gold text color */
+    margin-bottom: 10px;
+}
+
+.suggestions .card-body p {
+    font-size: 1rem;
+    color: #ddd;
+    line-height: 1.5;
+}
+
+.suggestions .card-body .btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    background: #f79729;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+}
+
+.suggestions .card-body .btn:hover {
+    background: #feb47b;
+    transform: translateY(-3px);
+}
+
+.suggestions .card-body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+ 
+    z-index: -1; /* To place the gradient behind the content */
+    transition: background 0.3s ease;
+}
+.list{
+    text-align: left;
+}
+.suggestions .card:hover .card-body::after {
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)); /* Reverse gradient on hover */
+}
+
+.footer-bottom {
+    background: rgba(153, 147, 147, 0.5);
+    text-align: center;
+    padding: 10px;
+    color: #fff;
+    margin-top: 20px;
+    width: 100%;
+
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+}

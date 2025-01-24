@@ -18,18 +18,22 @@
             <div class="logo">Tasty</div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="#index.html">About</a></li>
+                <li><a href="index.html">About</a></li>
+                <li><a href="dish.html">Recipes</a></li>
+
             </ul>
         </nav>
     </header>
-    <div class="container">
+    <div class="header-container">
         <h1 class="">Discover Delicious Dishes</h1>
         <p class="lead">Your ingredients, our suggestions. Find recipes effortlessly!</p>
+
+    </div>
+    <div class="body-container">
         <div class="text-center mb-4">
             <h2>Select Ingredients</h2>
             <p>Click on ingredients or add your own!</p>
         </div>
-
         <div class="ingredient-buttons text-center">
             <button class="btn btn-outline-primary ingredient-btn" data-ingredient="egg">Egg</button>
             <button class="btn btn-outline-primary ingredient-btn" data-ingredient="cheese">Cheese</button>
@@ -40,7 +44,6 @@
             <button class="btn btn-outline-primary ingredient-btn" data-ingredient="pepperoni">Pepperoni</button>
             <button class="btn btn-outline-primary ingredient-btn" data-ingredient="basil">Basil</button>
         </div>
-
         <div class="input-group">
             <input type="text" id="ingredientInput" class="form-control" placeholder="Enter an ingredient">
             <button class="btn btn-primary" id="addIngredient">+ Add Ingredient</button>
@@ -58,13 +61,16 @@
         <!-- Dish Suggestions Section -->
         <div class="suggestions mt-5">
             <h3 class="text-center mb-4">Suggested Dishes</h3>
-            <div id="dishSuggestions" class="row"></div>
+            <div id="dishSuggestions" class="row suggestions-grid"></div>
         </div>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 tasty | Designed with ❤️</p>
+        <div class="footer-container">
+        <div class="footer-bottom">
+            <p>&copy; 2025 Tasty | Designed with ❤️</p>
+        </div>
     </footer>
 
     </div>
@@ -91,73 +97,73 @@
             name: 'Pizza',
             ingredients: ['cheese', 'tomato', 'pepperoni'],
             steps: ['Prepare pizza dough.', 'Add tomato sauce, cheese, and pepperoni.', 'Bake in the oven at 200°C for 15 minutes.'],
-            image: '/pizza.jpeg'
+            image: '/img/pizza.jpeg'
         },
         {
             name: 'Grilled Cheese Sandwich',
             ingredients: ['cheese', 'bread', 'butter'],
             steps: ['Butter the bread slices.', 'Place cheese between slices.', 'Grill the sandwich until golden brown.'],
-            image: '/Grilled-Sandwich.webp'
+            image: '/img/Grilled-Sandwich.webp'
         },
         {
             name: 'Chicken Caesar Salad',
             ingredients: ['chicken', 'lettuce', 'croutons', 'parmesan cheese', 'caesar dressing'],
             steps: ['Grill or bake the chicken and slice it.', 'Toss lettuce with croutons, parmesan, and caesar dressing.', 'Top with chicken slices and serve.'],
-            image: '/Chicken-Caesar-Salad.jpeg'
+            image: '/img/Chicken-Caesar-Salad.jpeg'
         },
         {
             name: 'Beef Tacos',
             ingredients: ['ground beef', 'taco shells', 'cheese', 'lettuce', 'tomato', 'sour cream'],
             steps: ['Cook ground beef with taco seasoning.', 'Fill taco shells with beef and toppings.', 'Serve with cheese, lettuce, tomato, and sour cream.'],
-            image: '/Beef-Tacos.jpeg'
+            image: '/img/Beef-Tacos.jpeg'
         },
         {
             name: 'Chicken Curry',
             ingredients: ['chicken', 'curry powder', 'onion', 'tomato', 'cream'],
             steps: ['Cook chicken pieces in a pan.', 'Add onion and cook until soft.', 'Stir in curry powder, tomatoes, and cream.', 'Simmer and serve with rice.'],
-            image: '/Chicken-Curry.jpeg'
+            image: '/img/Chicken-Curry.jpeg'
         },
         {
             name: 'Vegetable Stir-fry',
             ingredients: ['broccoli', 'carrot', 'bell pepper', 'soy sauce', 'garlic'],
             steps: ['Chop vegetables and stir-fry with garlic.', 'Add soy sauce and cook until vegetables are tender.', 'Serve with rice or noodles.'],
-            image: '/Vegetable-Stir-fry.webp'
+            image: '/img/Vegetable-Stir-fry.webp'
         },
         {
             name: 'Burgers',
             ingredients: ['beef patty', 'burger bun', 'cheese', 'lettuce', 'tomato', 'pickles'],
             steps: ['Grill or fry the beef patty.', 'Assemble the burger with bun, patty, cheese, and toppings.', 'Serve with fries or salad.'],
-            image: '/Burgers.webp'
+            image: '/img/Burgers.webp'
         },
         {
             name: 'Fried Rice',
             ingredients: ['rice', 'egg', 'carrot', 'green peas', 'soy sauce'],
             steps: ['Cook rice and set aside.', 'Scramble eggs in a pan and add cooked rice.', 'Add vegetables and soy sauce.', 'Stir-fry and serve.'],
-            image: '/Fried-Rice.jpeg'
+            image: '/img/Fried-Rice.jpeg'
         },
         {
             name: 'Sushi',
             ingredients: ['sushi rice', 'nori sheets', 'salmon', 'avocado', 'soy sauce'],
             steps: ['Cook sushi rice and let it cool.', 'Place a nori sheet on a mat, spread rice, and add toppings.', 'Roll the sushi and slice into pieces.', 'Serve with soy sauce.'],
-            image: '/Sushi.jpeg'
+            image: '/img/Sushi.jpeg'
         },
         {
             name: 'Falafel',
             ingredients: ['chickpeas', 'garlic', 'parsley', 'cumin', 'coriander', 'flour'],
             steps: ['Blend chickpeas with garlic, herbs, and spices.', 'Form into balls and fry until golden brown.', 'Serve with pita and tahini sauce.'],
-            image: '/Falafel.webp'
+            image: '/img/Falafel.webp'
         },
         {
             name: 'Spaghetti Bolognese',
             ingredients: ['spaghetti', 'ground beef', 'tomato sauce', 'garlic', 'onion', 'parmesan cheese'],
             steps: ['Cook spaghetti according to package instructions.', 'Brown ground beef with garlic and onion.', 'Add tomato sauce and simmer.', 'Serve with pasta and parmesan.'],
-            image: '/Spaghetti Bolognese.jpeg'
+            image: '/img/Spaghettii.webp'
         },
         {
             name: 'Lentil Soup',
             ingredients: ['lentils', 'carrot', 'onion', 'celery', 'tomato'],
             steps: ['Sauté onion, carrot, and celery.', 'Add lentils and broth, and simmer until soft.', 'Serve with bread or crackers.'],
-            image: '/Lentil Soup.jpeg'
+            image: '/img/Lentil.jpg'
         }
     ];
 
@@ -197,17 +203,15 @@
         if (allMatches.length) {
             allMatches.forEach(dish => {
                 const card = `
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="${dish.image}" class="card-img-top" alt="${dish.name}">
-                            <div class="card-body">
-                                <h5 class="card-title">${dish.name}</h5>
-                                <p class="card-text">Ingredients: ${dish.ingredients.join(', ')}</p>
-                                <h6>Steps:</h6>
-                                <ol>${dish.steps.map(step => `<li>${step}</li>`).join('')}</ol>
-                            </div>
-                        </div>
-                    </div>`;
+                     <div class="card suggestions-card">
+                 <div class="card-img" style="background-image:url(${dish.image})"></div>  
+                    <div class="card-body">
+                        <h5>${dish.name}</h5>
+                        <p>Ingredients: ${dish.ingredients.join(', ')}</p>
+                        <h4>Steps:</h4>
+                        <ol class="list">${dish.steps.map(step => `<li>${step}</li>`).join('')}</ol>
+                    </div>
+                </div>`;
                 dishSuggestions.innerHTML += card;
             });
         } else {
