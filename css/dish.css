@@ -68,7 +68,14 @@ nav {
 .nav-links li a:hover {
     color: #f1c40f;
 }
-
+.menu-btn {
+    display: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;    
+    border: none;
+    background: none;
+}
 /* Main Content */
 .header-container {
     padding: 100px 20px 50px;
@@ -395,4 +402,167 @@ background-color: rgb(192, 181, 181);
 .footer-bottom p {
     margin: 0;
     font-size: 14px;
+}
+@media (max-width: 1024px) {
+    .header-container {
+        padding: 80px 20px 40px; 
+    }
+
+    .header-container h1 {
+        font-size: 3rem; 
+    }
+
+    .header-container p.lead {
+        font-size: 1.3rem;
+    }
+    .ingredient-btn {
+        font-size: 0.9rem; 
+        padding: 8px 16px; 
+    }
+    .suggestions h3 {
+        font-size: 1.8rem; /* Slightly smaller font size for medium screens */
+    }
+    
+    .suggestions .row {
+        gap: 20px; /* Reduce gap between cards */
+        padding: 15px;
+    }
+    
+    .suggestions .card {
+        height: 50vh; /* Adjust height for smaller screens */
+    }
+    
+    .suggestions .card-body h5 {
+        font-size: 1.3rem; /* Adjust font size for headings */
+    }
+    
+    .suggestions .card-body p {
+        font-size: 0.95rem; /* Slightly smaller font size for descriptions */
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background-color: #333; 
+        padding: 10px;
+        border-radius: 5px;
+        width: 200px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+        margin-right: 1.5rem;
+    }
+    .header-container {
+        padding: 60px 20px 30px; 
+        margin-bottom: 0;
+    }
+
+    .header-container h1 {
+        font-size: 2rem;
+        margin-top: 3rem;
+        margin-bottom: 0;
+    }
+    .header-container p.lead {
+        font-size: 1.2rem; 
+        margin-bottom: 0;
+    }
+    .body-container{
+        margin: 20px 20px;
+    }
+    .text-center h2{
+        margin-top: 10px;
+        font-size: 1rem;
+    }
+    .text-center p {
+        font-size: 0.7rem;
+    }
+    .ingredient-btn {
+        font-size: 0.85rem; 
+        padding: 7px 14px; 
+    }
+    .ingredient-buttons {
+        gap: 10px; 
+    }
+    .suggestions h3 {
+        font-size: 1.6rem; /* Smaller font size on smaller tablets */
+    }
+    
+    .suggestions .row {
+        grid-template-columns: 1fr 1fr; /* Two columns on smaller screens */
+        gap: 15px;
+    }
+    
+    .suggestions .card {
+        height: 45vh; /* Even smaller height for smaller screens */
+    }
+
+    .suggestions .card-body h5 {
+        font-size: 1.2rem;
+    }
+
+    .suggestions .card-body p {
+        font-size: 0.9rem;
+    }
+
+    .suggestions .card-body .btn {
+        font-size: 0.9rem;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .header-container {
+        padding: 40px 20px 20px; 
+    }
+
+    .header-container h1 {
+        font-size: 2rem; 
+    }
+    .header-container p.lead {
+        font-size: 1rem;
+     } 
+      .ingredient-btn {
+        font-size: 0.75rem; /* Even smaller font size on mobile */
+        padding: 6px 12px; /* Further reduce padding */
+    }
+    .ingredient-buttons {
+        gap: 8px; /* Reduce gap between buttons on mobile */
+    }
+    .suggestions h3 {
+        font-size: 1.4rem; /* Smaller font size for mobile */
+    }
+    
+    .suggestions .row {
+        grid-template-columns: 1fr; /* Single column layout on mobile */
+        gap: 10px;
+    }
+    
+    .suggestions .card {
+        height: 40vh; /* Further reduced height for mobile */
+    }
+    
+    .suggestions .card-body h5 {
+        font-size: 1.1rem;
+    }
+
+    .suggestions .card-body p {
+        font-size: 0.85rem;
+    }
+
+    .suggestions .card-body .btn {
+        font-size: 0.85rem;
+        padding: 8px 15px;
+    }
 }

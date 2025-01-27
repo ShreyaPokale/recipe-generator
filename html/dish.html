@@ -16,7 +16,8 @@
     <header>
         <nav>
             <div class="logo">Tasty</div>
-            <ul class="nav-links">
+            <button class="menu-btn" id="menu-btn" aria-label="Toggle navigation">☰</button>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html">About</a></li>
                 <li><a href="dish.html">Recipes</a></li>
@@ -80,6 +81,12 @@
 
 </body>
 <script>
+      const menuBtn = document.getElementById('menu-btn');
+    const navLinks = document.getElementById('nav-links');
+
+    menuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
     const dishes = [
         {
             name: 'Pasta',
@@ -231,5 +238,4 @@
         ingredientList.appendChild(btn);
     }
 </script>
-
 </html>
