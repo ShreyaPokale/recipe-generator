@@ -63,6 +63,14 @@ nav {
     color: #f1c40f;
 }
 
+.menu-btn {
+    display: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;    
+    border: none;
+    background: none;
+}
 .home-section {
     /* padding: 60px 20px; */
     text-align: center;
@@ -353,3 +361,198 @@ gap: 10px;
     margin: 0;
     font-size: 14px;
 }
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+        gap: 1.5rem;
+    }
+
+    .top-recipes-card {
+        height: 450px; /* Adjust height for smaller screens */
+    }
+
+    .top-recipes-card .rating {
+        margin-top: 220px; /* Adjust spacing for ratings */
+    }
+
+    .top-recipes-card h4 {
+        font-size: 1.3rem;
+    }
+
+    .top-recipes-card p {
+        font-size: 0.95rem;
+    }
+
+    .ingredients-header h3 {
+        font-size: 1.8rem; /* Slightly smaller heading */
+    }
+
+    .ingredients-scroll {
+        animation: infinite-scroll 25s linear infinite; /* Slower scroll on medium screens */
+    }
+
+    .ingredients-scroll .ingredient-card {
+        width: 100px; 
+    }
+
+    .ingredient-card img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .ingredient-card h4 {
+        font-size: 0.9rem;
+    }
+} 
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background-color: #333; 
+        padding: 10px;
+        border-radius: 5px;
+        width: 200px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+        margin-right: 1.5rem;
+    }
+    .home-container {
+        flex-direction: column; 
+        align-items: center;
+        gap: 30px;
+    }
+
+    .text {
+        padding: 20px;
+    }
+
+    .text h1 {
+        font-size: 2.5rem; 
+    }
+
+    .text p {
+        font-size: 1.2rem; 
+    }
+
+    .ready-cook-btn {
+        font-size: 1.2rem; 
+        padding: 10px 30px;
+    }
+
+    .dish img {
+        margin-top: 0;
+        max-width: 85%; 
+        height: 50%;
+    }
+
+    .cards {
+        grid-template-columns: repeat(1, 1fr); 
+        gap: 5rem;
+    }
+
+    .toprecipes-header h3 {
+        font-size: 1.8rem; 
+    }
+
+    .top-recipes-card {
+        height: 400px;
+    }
+
+    .top-recipes-card .rating {
+        margin-top: 200px;
+    }
+
+    .top-recipes-card h4 {
+        font-size: 1.2rem;
+    }
+
+    .top-recipes-card p {
+        font-size: 0.9rem;
+    }
+
+    .ingredients-header h3 {
+        font-size: 1.6rem; 
+    }
+
+    .ingredients-scroll {
+        animation: infinite-scroll 30s linear infinite; 
+    }
+
+    .ingredients-scroll .ingredient-card {
+        width: 90px; 
+    }
+
+    .ingredient-card img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .ingredient-card h4 {
+        font-size: 0.85rem;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 480px) {
+    .text h1 {
+        font-size: 1rem; 
+    }
+
+    .text p {
+        font-size: 1rem; 
+    }
+
+    .ready-cook-btn {
+        font-size: 0.8rem;
+        padding: 8px 20px;
+    }
+    .about-container {
+        padding: 10px; 
+    }
+
+    .ingredients-header h3 {
+        font-size: 1.4rem; 
+    }
+
+    .ingredients-scroll {
+        animation: infinite-scroll 35s linear infinite; 
+    }
+
+    .ingredients-scroll .ingredient-card {
+        width: 80px;
+    }
+
+    .ingredient-card img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .ingredient-card h4 {
+        font-size: 0.75rem; 
+    }
+}
+
+
+   

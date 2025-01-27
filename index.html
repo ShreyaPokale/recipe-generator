@@ -15,7 +15,8 @@
     <header>
         <nav>
             <div class="logo">Tasty</div>
-            <ul class="nav-links">
+            <button class="menu-btn" id="menu-btn" aria-label="Toggle navigation">☰</button>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#index.html">About</a></li>
                 <li><a href="/html/dish.html">Recipes</a></li>
@@ -153,20 +154,29 @@
                         <h4>Fresh Vegetable </h4>
                     </div>
                 </div>
-              
+
             </div>
         </div>
         <footer>
             <div class="footer-container">
-            <div class="footer-bottom">
-                <p>&copy; 2025 Tasty | Designed with ❤️</p>
-            </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Tasty | Designed with ❤️</p>
+                </div>
         </footer>
-        
+
 
     </section>
- 
+
 
 </body>
+<script>
+    const menuBtn = document.getElementById('menu-btn');
+    const navLinks = document.getElementById('nav-links');
+
+    menuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+</script>
+
 
 </html>
